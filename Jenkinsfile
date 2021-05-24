@@ -4,6 +4,7 @@ pipeline {
           docker { 
               image 'python:3.9.4'
             }
+}
   stages {
     stage('Test') {
       steps {
