@@ -24,7 +24,8 @@ pipeline {
       steps {
         sh '''
             python -m venv .venv 
-            . .venv/bin/activatepython test.py
+            . .venv/bin/activate
+            python test.py
           '''
       }
       post {
