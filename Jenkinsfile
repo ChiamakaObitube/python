@@ -1,6 +1,6 @@
 pipeline {
   agent { docker { image 'python:3.9.4'
-                   registryUrl "chiamakaobitube/node-jenkins"
+                   registryUrl "https://hub.docker.com/repository/docker/chiamakaobitube/node-jenkins"
                    registryCredentialsId "dockerhub" } }
   stages {
       stage('Test') {
