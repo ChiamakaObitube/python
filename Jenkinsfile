@@ -2,7 +2,7 @@ pipeline {
 
   agent any
   stages {
-   stage('test') {
+   stage('Run Python') {
      agent {
           docker {
                image 'qnib/pytest'
