@@ -2,15 +2,15 @@ pipeline {
 
   agent any
   stages {
-    stage('Run Python') {
-          steps {
-                sh 'pip --version'
-            }
-    }
-    stage('Test') {
-      steps {
-          sh 'pip --version'
-      }
+   stage('test') {
+     agent {
+          docker {
+               image 'qnib/pytest'
+          }
+     }
+     steps {
+          sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt && python tests.py'
+     }
   }
     stage('build') {
       steps {
