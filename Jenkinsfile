@@ -13,10 +13,11 @@ pipeline {
   }
     stage('build') {
       steps {
-        sh '
+        sh '''
             python -m venv .venv
             . .venv/bin/activate
-            pip install requirements.txt'
+            pip install requirements.txt
+          '''
       }
     }
     stage('test') {
