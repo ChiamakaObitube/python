@@ -22,7 +22,10 @@ pipeline {
     }
     stage('test') {
       steps {
-        sh 'python test.py'
+        sh '''
+            python -m venv .venv 
+            . .venv/bin/activatepython test.py
+          '''
       }
       post {
         always {
