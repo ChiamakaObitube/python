@@ -7,7 +7,7 @@ pipeline {
       agent {
               docker { 
                   image 'python:3.9.4'
-                  registryUrl 'https://index.docker.io/v1/'
+                  registryUrl 'https://registry.hub.docker.com'
               }
           }
           steps {
