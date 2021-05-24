@@ -6,14 +6,17 @@ pipeline {
             }
 }
   stages {
-    stage('Test') {
+    stage('Run python') {
       steps {
           sh 'pip --version'
       }
   }
     stage('build') {
       steps {
-        sh 'pip install --user runloop requirements.txt'
+        sh '
+            python -m venv .venv
+            . .venv/bin/activate
+            pip install requirements.txt'
       }
     }
     stage('test') {
