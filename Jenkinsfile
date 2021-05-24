@@ -13,7 +13,7 @@ pipeline {
   }
     stage('build') {
       steps {
-        sh 'pip install -r requirements.txt'
+        sh 'pip install --user runloop requirements.txt'
       }
     }
     stage('test') {
