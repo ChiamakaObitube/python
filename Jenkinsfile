@@ -16,7 +16,7 @@ pipeline {
         sh '''
             python -m venv .venv flask
             cd flask
-            . .venv/bin/activate
+            . .venv/flask/activate
             pip install -r requirements.txt
           '''
       }
