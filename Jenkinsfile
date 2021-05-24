@@ -1,16 +1,23 @@
 pipeline {
 
-  agent any
+  agent none
+
   stages {
-   stage('Run Python') {
-     agent {
-          docker {
-               image 'qnib/pytest'
+    stage('Run Python') {
+      agent {
+              docker { 
+                  image 'python:3.9.4'
+                  registryUrl 'https://index.docker.io/v1/'
+              }
           }
-     }
-     steps {
-          sh 'virtualenv venv && . venv/bin/activate && pip install -r requirements.txt && python tests.py'
-     }
+          steps {
+                sh 'pip --version'
+            }
+    }
+    stage('Test') {
+      steps {
+          sh 'pip --version'
+      }
   }
     stage('build') {
       steps {
