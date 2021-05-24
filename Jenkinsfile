@@ -1,19 +1,10 @@
 pipeline {
 
-  agent none
-
-  stages {
-    stage('Run Python') {
-      agent {
-              docker { 
-                  image 'python:3.9.4'
-                  registryUrl 'https://index.docker.io/v1/'
-              }
-          }
-          steps {
-                sh 'pip --version'
+  agent {
+          docker { 
+              image 'python:3.9.4'
             }
-    }
+  stages {
     stage('Test') {
       steps {
           sh 'pip --version'
