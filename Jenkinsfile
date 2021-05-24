@@ -10,6 +10,9 @@ pipeline {
                   registryUrl 'https://index.docker.io/v1/'
               }
           }
+          steps {
+                sh 'pip --version'
+            }
     }
     stage('Test') {
       steps {
